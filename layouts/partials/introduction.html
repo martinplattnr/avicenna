@@ -1,11 +1,10 @@
 <div class="introduction">
 	{{- range $index, $key := .Site.Params.Introduction.paragraph -}}
-	<span>
+	<p>
 		{{ $key.text  | safeHTML }}
-	</span>
-	<br>
+	</p>
 	{{- end -}}
-	<span>
-		<b>Interests.</b> {{ $.Site.Params.interests | markdownify }}
-	</span>
+	<p>
+		<strong>Interests.</strong> {{ $.Site.Params.interests | markdownify }}
+	</p>
 </div>
