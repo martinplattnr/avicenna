@@ -1,0 +1,40 @@
+{{ with .Site.Params.list_section }}
+  {{- range $index, $items_map := $.Site.Params.list_section -}}
+  <section class="{{ .items_map.css_class }}">
+    <h4>{{ $items_map.title }}</h4>
+    <ul>
+
+      {{ range $item_index, $item := $items_map.item }}
+
+      <li class="item">
+
+        <span class="item-title">
+          {{ if $item.title_url }}
+            <a href="{{ $item.title_url }}" target="_blank"> {{ $item.title }}</a>
+          {{ else }}
+            {{ $item.title }}
+          {{ end }}
+        </span>
+
+        <span class="item-links">
+          {{ range $link_index, $link := $item.links }}
+          <span class="item-link">
+            <a href="{{ $link.url}}">[{{ $link.text }}]</a>
+          </span>
+          {{ end }}
+        </span>
+
+        <div class="item-description">
+          {{ $item.description | markdownify }}
+        </div>
+
+        <div class="item-metadata">
+          {{ $item.metadata | markdownify }}
+        </div>
+
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{- end -}}
+{{ end }}

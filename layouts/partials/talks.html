@@ -26,6 +26,12 @@
 			</span>
 			{{ end }}
 
+			{{ with $talk.metadata }}
+			<span class="project_metadata">
+				{{ . | markdownify}}
+			</span>
+			{{ end }}
+
 		</li>
 		{{ end }}
 

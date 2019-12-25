@@ -9,26 +9,31 @@
 		{{ range $elem_index, $publication := $publications.paper }}
 		<li>
 			{{ if $publication.link }}
-			<a href="{{ $publication.link }}" class="publications"> {{ $publication.name }}, </a>
+			<a href="{{ $publication.link }}" class="publications" target="_blank"> {{ $publication.name }}</a>
 			{{ else }}
-			<p class="publications"> {{ $publication.name }}, </p>
+			<p class="publications"> {{ $publication.name }}</p>
 			{{ end }}
-			{{ $publication.dest | markdownify }}.
 
 			{{ if or ($publication.code_link) $publication.blog_link }}
 			<span class="code_blog">
 				{{ with $publication.code_link }}
-				[<a href="{{ $publication.code_link }}">code</a>]
+				[<a href="{{ $publication.code_link }}" target="_blank">code</a>]
 				{{ end }}
 
 				{{ with $publication.blog_link }}
-				[<a href="{{ $publication.blog_link }}">blog</a>]
+				[<a href="{{ $publication.blog_link }}" target="_blank">blog</a>]
 				{{ end }}
 			</span>
 			{{ end }}
 
-			<span class="collaborators">
-				{{ $publication.authors | markdownify }}
+			{{ with $publication.description }}
+			<span class="project_description">
+				{{ . | markdownify}}
+			</span>
+			{{ end }}
+
+			<span class="project_metadata">
+				{{ $publication.metadata | markdownify }}
 			</span>
 		</li>
 		{{ end }}

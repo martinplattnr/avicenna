@@ -5,21 +5,16 @@
 		<span class="affiliation">
 			{{- range $index, $key := .Site.Params.affiliation -}}
 			<ul class="flat">
-				<li class="position">{{$key.position}} at {{$key.name}}</li>
+				<li class="position">{{$key.position}} <span class="minor">@</span> <a href="{{$key.url}}" target="_blank">{{$key.name}}</a></li>
 				<li class="email"><a href="mailto:{{ $key.contact}}">{{ $key.contact}}</a></li>
 			</ul>
 			{{- end -}}
 		</span>
-		<!--
-      {{- if isset .Site.Params "subtitle" -}}
-      <h2>{{ .Site.Params.Subtitle | markdownify }}</h2>
-      {{- end -}}
-    -->
 
 		<nav class="nav social">
 			<ul class="flat">
 				{{- range $index, $key := .Site.Params.Social -}}
-				<a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+				<a href="{{ $key.url }}" title="{{ $key.name }}" target="_blank"><i class="{{ $key.icon }}"></i></a>
 				{{- end -}}
 				{{ if or (.Site.Params.blog) (.Site.Params.cv_name) }}
 				|

@@ -22,8 +22,6 @@
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
 
-	{{- template "_internal/opengraph.html" . -}}
-	{{- template "_internal/twitter_cards.html" . -}}
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href={{ "css/normalize.css" | absURL }} />
@@ -33,10 +31,7 @@
 	<link rel="stylesheet" href="{{ . | absURL }}">
 	{{- end }}
 
-	{{- if and (isset .Site.Params "social") (isset .Site.Params "feathericonscdn") (eq .Site.Params.featherIconsCDN true) -}}
-	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	{{- else if (isset .Site.Params "social") -}}
-	<script src={{ "js/feather.min.js" | absURL }}></script>
-	{{- end -}}
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
 	<script src={{ "js/main.js" | absURL }}></script>
 </head>
