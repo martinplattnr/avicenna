@@ -1,6 +1,10 @@
 <div class="footer wrapper">
 	<nav class="nav">
-		<div>Built with <a href="https://gohugo.io">Hugo</a> using <a href="https://github.com/hadisinaee/avicenna">Avicenna</a> theme.</div>
+		<div>
+		{{- range $index, $key := .Site.Params.Footer_navigation -}}
+			<a href="{{ $key.url}}">{{ $key.name  | safeHTML }}</a> |&nbsp;
+		{{- end -}}
+		&copy; Copyright {{ now.Year }} {{ .Site.Params.copyright_name }}</div>
 	</nav>
 </div>
 
