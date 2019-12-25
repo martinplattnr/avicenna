@@ -56,12 +56,12 @@ timeout=3000
   cv_name= "HadiSinaee_CV.pdf"
   blog="http://myblog.edu"
 
-[[params.affilation]]
+[[params.affiliation]]
   name = "Stanford University"
   position = "PhD Student"
   contact = "hadi@cs.stanford.edu"
 
-[[params.affilation]]
+[[params.affiliation]]
   name = "MyCoolStartup"
   position = "Co-Founder"
   contact = "hadi@mycoolstartup.ai"

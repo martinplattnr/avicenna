@@ -242,12 +242,12 @@ ul {
   text-transform: capitalize;
 }
 
-.header .site-affilation {
+.header .site-affiliation {
   display: flex;
   justify-content: space-between;
 }
 
-.header .site-affilation .email {
+.header .site-affiliation .email {
   /* color: #a00; */
   font-size: 14px;
   display: block;
@@ -255,7 +255,7 @@ ul {
   font-weight: bolder;
 }
 
-.header .site-affilation .position {
+.header .site-affiliation .position {
   /* color: #a00; */
   /* font-size: 14px; */
   /* display: block; */
@@ -263,13 +263,13 @@ ul {
   /* font-weight: bolder; */
 }
 
-.header .site-affilation nav {
+.header .site-affiliation nav {
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.header .site-affilation nav ul svg {
+.header .site-affiliation nav ul svg {
   max-height: 15px;
 }
 
