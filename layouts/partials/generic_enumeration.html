@@ -1,6 +1,6 @@
 {{ with .Site.Params.list_section }}
   {{- range $index, $items_map := $.Site.Params.list_section -}}
-  <section class="{{ .items_map.css_class }}">
+  <section class="{{ $items_map.css_class }}">
     <h4>{{ $items_map.title }}</h4>
     <ul>
 
