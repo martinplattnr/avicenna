@@ -5,7 +5,7 @@
 		<span class="affiliation">
 			{{- range $index, $key := .Site.Params.affiliation -}}
 			<ul class="flat">
-				<li class="position">{{$key.position}} <span class="minor">@</span> <a href="{{$key.url}}" target="_blank">{{$key.name}}</a></li>
+				<li class="position">{{$key.position}} <span class="minor">@</span> <a href="{{$key.url}}">{{$key.name}}</a></li>
 				<li class="email"><a href="mailto:{{ $key.contact}}">{{ $key.contact}}</a></li>
 			</ul>
 			{{- end -}}
